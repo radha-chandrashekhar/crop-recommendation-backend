@@ -14,9 +14,9 @@ pop_df = pd.read_csv('Dataset_1_1.csv')
 
 # --- Season map ---
 crop_season_map = {
-    "rice": ["kharif"], "jowar": ["kharif", "rabi"], "bajra": ["kharif"],
+    "rice": ["kharif"], "jowar": ["kharif", "rabi"], "bajara": ["kharif"],
     "maize": ["kharif"], "ragi": ["kharif"], "cotton": ["kharif"],
-    "soybean": ["kharif"], "groundnut": ["kharif"], "sesame": ["kharif"],
+    "soyabean": ["kharif"], "groundnut": ["kharif"], "sesame": ["kharif"],
     "toor": ["kharif"], "wheat": ["rabi"], "chickpea": ["rabi"],
     "mustard": ["rabi"], "sugarcane": ["perennial"], "sunflower": ["kharif", "rabi"],
     "castor": ["kharif", "rabi"]
