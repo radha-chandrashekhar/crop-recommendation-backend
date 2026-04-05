@@ -76,7 +76,6 @@ def get_recommendations(n, p, k, ph, rainfall, district, month, top_k=5, alpha=0
 def recommend():
     try:
         data = request.get_json()
-
         n        = float(data['n'])
         p        = float(data['p'])
         k        = float(data['k'])
@@ -86,9 +85,12 @@ def recommend():
         month    = data['month']
         top_k    = int(data.get('top_k', 5))
 
+        # ADD THIS
+        if n == 0 and p == 0 and k == 0 and ph == 0:
+            return jsonify({"status": "error", "message": "Invalid soil readings. Please connect the sensor or enter values manually."}), 400
+
         results = get_recommendations(n, p, k, ph, rainfall, district, month, top_k)
         return jsonify({"status": "success", "recommendations": results})
-
     except Exception as e:
         return jsonify({"status": "error", "message": str(e)}), 400
 
